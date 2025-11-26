@@ -1,1 +1,1 @@
-![Project logo](assets/logosmaller)# East-African-Lexome
+![Project logo](assets/logosmaller.png)# East-African-Lexome
