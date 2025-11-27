@@ -1,5 +1,1 @@
-CLDF Core,Standard CLDF Extensible,Your Custom Grammatical Columns
-ID,Source,Part_of_Speech
-Language_ID,Comment,Grammatical_Features
-Parameter_ID,Segments (for phonological analysis),IPA
-Form
+ID,Language_ID,Parameter_ID,Form,Part_of_Speech,Grammatical_Features,IPA,Source,Comment,Segments
