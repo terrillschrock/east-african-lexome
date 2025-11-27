@@ -1,0 +1,34 @@
+ID,Name,Glottocode,ISO639P3code,Family,Subfamily,Latitude,Longitude
+aco,Acoli,acol1236,ach,nilo1247,sout2831,3.57738,32.5147
+adh,Adhola,adho1243,adh,nilo1247,adho1242,0.73235,34.0341
+alu,Alur,alur1250,alz,nilo1247,adho1241,2.36213,31.0016
+amb,Amba (Uganda),amba1263,rwm,atla1278,komo1265,0.81206,30.0014
+ari,Aringa,arin1244,luc,cent2225,cent2043,3.56143,31.3071
+chi,Chiga,chig1238,cgg,atla1278,nkor1241,-1.04387,29.9122
+gan,Ganda,gand1255,lug,atla1278,nort3220,0.66884,32.15153
+gun,Gungu,gung1250,rub,atla1278,grea1289,2.06754,31.4819
+gwe,Gwere,gwer1238,gwr,atla1278,east2912,1.11392,33.8227
+ikk,Ik,ikkk1242,ikx,kuli1252,kuli1252,3.61407,34.2507
+kar,Karamojong,kara1483,kdj,nilo1247,turk1307,2.45157,34.2761
+ken,Kenyi,keny1278,lke,atla1278,soga1244,1.1513,33.4791
+kon,Konzo,konz1239,koo,atla1278,konz1238,0.32395,29.8696
+kum,Kumam,kuma1275,kdi,nilo1247,lang1323,1.74748,33.2116
+kup,Kupsabiny,kups1238,kpz,nilo1247,elgo1240,1.33197,34.5991
+lab,Labwor,labw1238,lth,nilo1247,acol1236,2.699942,33.657947
+lan,Lango (Uganda),lang1324,laj,nilo1247,lang1323,2.13867,33.0553
+lug,Lugbara,lugb1240,lgg,cent2225,cent2043,3.02245,30.8642
+maa,Ma'di,madi1260,mhi,cent2225,sout2827,3.62499,31.8471
+mas,Masaaba,masa1299,myx,atla1278,nort3404,1.05906,34.2829
+nyk,Nyankole,nyan1307,nyn,atla1278,nkor1241,-0.46364,30.548
+nyg,Nyang'i,nyan1313,nyp,kuli1252,ngan1305,3.4997,33.73651
+nyl,Nyole,nyol1238,nuj,atla1278,saam1286,0.88072,33.9181
+nyr,Nyoro,nyor1246,nyo,atla1278,nyor1247,0.95294,31.3493
+ruu,Ruuli,ruul1235,ruc,atla1278,nort3228,1.41726,32.4179
+saa,Saamia,saam1283,lsm,atla1278,saam1286,0.3652,34.0335
+sog,Soga,soga1242,xog,atla1278,soga1244,0.40456,33.3942
+soo,Soo,sooo1256,teu,kuli1252,ngan1305,2.58367,34.7595
+mss,Southern Ma'di,sout2828,snm,cent2225,sout2827,2.8735,31.25
+sya,Syan,syan1242,,atla1278,east2912,1.280475,34.337012
+bwi,Talinga-Bwisi,tali1258,tlj,atla1278,nort3228,0.676185,29.9494
+tes,Teso,teso1249,teo,nilo1247,teso1248,1.18321,33.9394
+too,Tooro,toor1238,ttj,atla1278,nyor1247,0.57291,30.6389
