@@ -1,34 +1,210 @@
 ID,Name,Glottocode,ISO639P3code,Family,Subfamily,Country,Latitude,Longitude
-aco,Acoli,acol1236,ach,nilo1247,sout2831,Uganda,3.57738,32.5147
-adh,Adhola,adho1243,adh,nilo1247,adho1242,Uganda,0.73235,34.0341
-alu,Alur,alur1250,alz,nilo1247,adho1241,Uganda,2.36213,31.0016
-amb,Amba (Uganda),amba1263,rwm,atla1278,komo1265,Uganda,0.81206,30.0014
-ari,Aringa,arin1244,luc,cent2225,cent2043,Uganda,3.56143,31.3071
-chi,Chiga,chig1238,cgg,atla1278,nkor1241,Uganda,-1.04387,29.9122
-gan,Ganda,gand1255,lug,atla1278,nort3220,Uganda,0.66884,32.15153
-gun,Gungu,gung1250,rub,atla1278,grea1289,Uganda,2.06754,31.4819
-gwe,Gwere,gwer1238,gwr,atla1278,east2912,Uganda,1.11392,33.8227
-ikk,Ik,ikkk1242,ikx,kuli1252,kuli1252,Uganda,3.61407,34.2507
-kar,Karamojong,kara1483,kdj,nilo1247,turk1307,Uganda,2.45157,34.2761
-ken,Kenyi,keny1278,lke,atla1278,soga1244,Uganda,1.1513,33.4791
-kon,Konzo,konz1239,koo,atla1278,konz1238,Uganda,0.32395,29.8696
-kum,Kumam,kuma1275,kdi,nilo1247,lang1323,Uganda,1.74748,33.2116
-kup,Kupsabiny,kups1238,kpz,nilo1247,elgo1240,Uganda,1.33197,34.5991
-lab,Labwor,labw1238,lth,nilo1247,acol1236,Uganda,2.699942,33.657947
-lan,Lango (Uganda),lang1324,laj,nilo1247,lang1323,Uganda,2.13867,33.0553
-lug,Lugbara,lugb1240,lgg,cent2225,cent2043,Uganda,3.02245,30.8642
-maa,Ma'di,madi1260,mhi,cent2225,sout2827,Uganda,3.62499,31.8471
-mas,Masaaba,masa1299,myx,atla1278,nort3404,Uganda,1.05906,34.2829
-nyk,Nyankole,nyan1307,nyn,atla1278,nkor1241,Uganda,-0.46364,30.548
-nyg,Nyang'i,nyan1313,nyp,kuli1252,ngan1305,Uganda,3.4997,33.73651
-nyl,Nyole,nyol1238,nuj,atla1278,saam1286,Uganda,0.88072,33.9181
-nyr,Nyoro,nyor1246,nyo,atla1278,nyor1247,Uganda,0.95294,31.3493
-ruu,Ruuli,ruul1235,ruc,atla1278,nort3228,Uganda,1.41726,32.4179
-saa,Saamia,saam1283,lsm,atla1278,saam1286,Uganda,0.3652,34.0335
-sog,Soga,soga1242,xog,atla1278,soga1244,Uganda,0.40456,33.3942
-soo,Soo,sooo1256,teu,kuli1252,ngan1305,Uganda,2.58367,34.7595
-mss,Southern Ma'di,sout2828,snm,cent2225,sout2827,Uganda,2.8735,31.25
-sya,Syan,syan1242,,atla1278,east2912,Uganda,1.280475,34.337012
-bwi,Talinga-Bwisi,tali1258,tlj,atla1278,nort3228,Uganda,0.676185,29.9494
-tes,Teso,teso1249,teo,nilo1247,teso1248,Uganda,1.18321,33.9394
-too,Tooro,toor1238,ttj,atla1278,nyor1247,Uganda,0.57291,30.6389
+ke1,Aweer,awee1242,bob,afro1255,karr1237,Kenya,-1.40124,41.234
+ke2,Borana-Arsi-Guji Oromo,bora1271,gax,afro1255,cent2424,Kenya,1.05676,37.882
+ke3,Bukusu,buku1249,bxk,atla1278,nort3404,Kenya,0.68,34.77
+ke4,Chuka,chuk1274,cuh,atla1278,east2901,Kenya,-0.27405,37.6116
+ke5,Cutchi-Swahili,cutc1238,ccl,atla1278,momb1256,Kenya,-3.13905,38.6217
+ke6,Dahalo,daha1245,dal,afro1255,east2699,Kenya,-2.1843,40.37
+ke7,Digo,digo1243,dig,atla1278,sout3204,Kenya,-4.62101,39.1752
+ke8,Duruma,duru1249,dug,atla1278,nort3232,Kenya,-4.09629,39.322
+ke9,East Nyala,east2409,nle,atla1278,kaba1294,Kenya,0.38163,34.6626
+ke10,El Molo,elmo1238,elo,afro1255,west2723,Kenya,2.79312,36.7619
+ke11,Embu,embu1241,ebu,atla1278,cent2274,Kenya,-0.62822,37.5933
+ke12,Giryama,giry1241,nyf,atla1278,nort3232,Kenya,-3.30638,39.6648
+ke13,Gusii,gusi1247,guz,atla1278,nort3227,Kenya,-0.78872,34.76751
+ke14,Idakho-Isukha-Tiriki,idak1243,ida,atla1278,luyi1234,Kenya,0.21557,34.817
+ke15,Ilwana,ilwa1237,mlk,atla1278,saba1282,Kenya,-0.66322,39.793
+ke16,Kabras,kabr1240,lkb,atla1278,kaba1294,Kenya,0.29,34.83
+ke17,Kalenjin,kale1246,kln,nilo1247,sout2830,Kenya,-0.02158,35.92363
+ke18,Kamba (Kenya),kamb1297,kam,atla1278,kamb1323,Kenya,-1.60827,37.9532
+ke19,Keiyo,keiy1238,eyo,nilo1247,west3004,Kenya,0.510857,35.226745
+ke20,Kikuyu,kiku1240,kik,atla1278,giku1234,Kenya,-0.29005,36.719
+ke21,Kipsigis,kips1239,sgc,nilo1247,cent2293,Kenya,-0.35774,35.258532
+ke22,Kisa,kisa1263,lks,atla1278,kisa1269,Kenya,0.1529,34.5708
+ke23,Kisisi,kisi1251,,pidg1258,upco1238,Kenya,-0.50021,36.25994
+ke24,Kupsabiny,kups1238,kpz,nilo1247,elgo1240,Kenya,1.33197,34.5991
+ke25,Logooli,logo1258,rag,atla1278,grea1291,Kenya,0.09487,34.729
+ke26,Luo (Kenya and Tanzania),luok1236,luo,nilo1247,adho1242,Kenya,-0.93296,34.4896
+ke27,Maay,maay1238,ymm,afro1255,east2653,Kenya,3.22288,43.6182
+ke28,Marachi,mara1393,lri,atla1278,mara1423,Kenya,0.34,34.22
+ke29,Marama,mara1392,lrm,atla1278,kisa1269,Kenya,0.19,34.49
+ke30,Markweeta,mark1255,enb,nilo1247,nort3239,Kenya,1.15018,35.5866
+ke31,Meru,meru1245,mer,atla1278,nith1234,Kenya,0.26484,37.7396
+ke32,Mwimbi-Muthambi,mwim1241,mws,atla1278,nith1234,Kenya,-0.11968,37.5939
+ke33,Nandi,nand1266,niq,nilo1247,west3004,Kenya,0.793737,35.408478
+ke34,Nyore,nyor1244,nyd,atla1278,cent2288,Kenya,0.07523,34.6166
+ke35,Omotik,omot1239,omt,nilo1247,tato1241,Kenya,-1.34401,35.6296
+ke36,Orma,orma1241,orc,afro1255,tana1300,Kenya,-1.79489,39.60749
+ke37,Pokomo,poko1261,pkb,atla1278,miji1240,Kenya,-2.31587,40.2897
+ke38,Rendille,rend1243,rel,afro1255,east2653,Kenya,2.27065,37.3608
+ke39,Rombo,romb1244,rof,atla1278,chag1250,Kenya,-3.07772,37.5382
+ke40,Sabaot,saba1262,spy,nilo1247,elgo1240,Kenya,1.01,34.67
+ke41,Sagalla,saga1262,tga,atla1278,tait1249,Kenya,-3.60164,38.5037
+ke42,Samburu,samb1315,saq,nilo1247,nucl1431,Kenya,1.60735,37.0539
+ke43,Singa,sing1266,sgm,atla1278,uncl1547,Kenya,-0.40299,34.17762
+ke44,Tachoni,tach1242,lts,atla1278,kaba1294,Kenya,0.6079,34.8298
+ke45,Taita,tait1250,dav,atla1278,tait1249,Kenya,-3.79347,38.57254
+ke46,Taveta,tave1240,tvs,atla1278,pare1274,Kenya,-3.41822,37.7061
+ke47,Terik,teri1244,tec,nilo1247,west3004,Kenya,0.6,35
+ke48,Tharaka,thar1283,thk,atla1278,nort3413,Kenya,-0.13221,38.073
+ke49,Tsotso,tsot1241,lto,atla1278,kisa1269,Kenya,0.2975,34.6961
+ke50,Tugen,tuge1241,tuy,nilo1247,plat1260,Kenya,0.66573,35.8499
+ke51,Waata,waat1238,ssn,afro1255,tana1300,Kenya,-3.25406,40.03761
+ke52,Wanga,wang1294,lwg,atla1278,cent2288,Kenya,0.343,34.477
+ke53,West Nyala,west2861,,atla1278,west2858,Kenya,0.08,33.99
+ke54,Yaaku,yaak1241,muu,afro1255,tran1283,Kenya,0.46863,37.1008
+tz1,Aasax,aasa1238,aas,afro1255,sout3054,Tanzania,-4.00679,36.8648
+tz2,Akie,mosi1247,mwy,nilo1247,okie1247,Tanzania,-5.43471,37.1869
+tz3,Alagwa,alag1248,wbj,afro1255,nort3164,Tanzania,-4.64148,35.7231
+tz4,Aramanik,aram1252,aam,book1242,book1242,Tanzania,-2.90656,37.3491
+tz5,Asu (Tanzania),asut1235,asa,atla1278,pare1277,Tanzania,-4.17978,37.8323
+tz6,Barabayiiga-Gisamjanga,dato1239,tcc,nilo1247,nort3277,Tanzania,-4.4131,35.2321
+tz7,Bembe,bemb1255,bmb,atla1278,bemb1261,Tanzania,-4.49057,29.0507
+tz8,Bena (Tanzania),bena1262,bez,atla1278,bena1273,Tanzania,-9.26671,35.0364
+tz9,Bende,bend1258,bdp,atla1278,bend1261,Tanzania,-6.22082,30.5926
+tz10,Biyanjiida,bian1249,,nilo1247,geme1247,Tanzania,-5.9,34.3
+tz11,Bondei,bond1247,bou,atla1278,bond1249,Tanzania,-5.10749,38.5079
+tz12,Bungu,bung1265,wun,atla1278,mwik1240,Tanzania,-8.32587,32.8801
+tz13,Buraadiga,bura1273,,nilo1247,nort3277,Tanzania,-3.9,34.1
+tz14,Burunge,buru1320,bds,afro1255,west2720,Tanzania,-5.21369,35.963
+tz15,Dhaiso,dhai1238,dhs,atla1278,kamb1323,Tanzania,-4.81209,38.818
+tz16,Doe,doee1238,doe,atla1278,east2756,Tanzania,-6.25844,38.4902
+tz17,Fipa,fipa1238,fip,atla1278,fipa1240,Tanzania,-7.88963,31.3442
+tz18,Gogo,gogo1263,gog,atla1278,west2846,Tanzania,-6.35951,35.4807
+tz19,Gorowa,goro1270,gow,afro1255,iraq1240,Tanzania,-4.23575,35.7996
+tz20,Gweno,gwen1239,gwe,atla1278,chag1248,Tanzania,-3.68407,37.6827
+tz21,Ha,haaa1252,haq,atla1278,rund1244,Tanzania,-3.77873,30.4894
+tz22,Hadza,hadz1240,hts,,,Tanzania,-3.83115,35.0458
+tz23,Hangaza,hang1260,han,atla1278,hang1264,Tanzania,-2.52347,30.7074
+tz24,Hehe,hehe1240,heh,atla1278,bena1273,Tanzania,-7.71572,35.7255
+tz25,Ikizu,ikiz1238,ikz,atla1278,sout3373,Tanzania,-1.9915,34.3589
+tz26,Ikoma-Nata,ikom1245,ntk,atla1278,ikom1247,Tanzania,-1.94989,34.5361
+tz27,Iraqw,iraq1241,irk,afro1255,iraq1240,Tanzania,-4.19948,35.2939
+tz28,Isanzu,isan1243,isn,atla1278,nyat1247,Tanzania,-3.99991,34.846
+tz29,Isenye,isse1238,,atla1278,ikom1247,Tanzania,-2.019886,34.413574
+tz30,Isimjeega-Rootigaanga,isim1234,,nilo1247,nort3277,Tanzania,-3.423772,35.42881
+tz31,Jita,jita1239,jit,atla1278,sugu1245,Tanzania,-1.62681,33.9141
+tz32,Kabwa,kabw1241,cwa,atla1278,unun9920,Tanzania,-1.7124,34.3923
+tz33,Kagulu,kagu1239,kki,atla1278,ruvu1235,Tanzania,-6.38204,37.0534
+tz34,Kahe,kahe1238,hka,atla1278,cent2286,Tanzania,-3.51412,37.5759
+tz35,Kami (Tanzania),kami1256,kcu,atla1278,cent2287,Tanzania,-6.71075,37.98
+tz36,Kara (Tanzania),kara1481,reg,atla1278,sugu1245,Tanzania,-1.83511,33.0488
+tz37,Kerewe,kere1283,ked,atla1278,ruta1242,Tanzania,-2.09315,33.5326
+tz38,Kimbu,kimb1242,kiv,atla1278,nyam1286,Tanzania,-7.23023,33.6445
+tz39,Kinga,nucl1379,zga,atla1278,king1258,Tanzania,-9.35868,34.2321
+tz40,Kisankasa,kisa1264,kqh,book1242,book1242,Tanzania,-2.780485,36.59766
+tz41,Kisi,kisi1243,kiz,atla1278,kisi1244,Tanzania,-9.93,34.4825
+tz42,Konongo-Ruwila,kono1265,kcz,atla1278,nyam1286,Tanzania,-6.51503,32.1803
+tz43,Kuria,kuri1259,kuj,atla1278,kuri1276,Tanzania,-1.50636,34.5049
+tz44,Kutu,kutu1263,kdc,atla1278,kutu1267,Tanzania,-7.23789,37.8623
+tz45,Kw'adza,kwad1248,wka,afro1255,grea1305,Tanzania,-4.00743,35.1828
+tz46,Kwaya,kway1241,kya,atla1278,sugu1245,Tanzania,-1.80737,33.71
+tz47,Kwere,kwer1261,cwe,atla1278,cent2287,Tanzania,-6.50666,38.4449
+tz48,Lambya,lamb1272,lai,atla1278,nyik1250,Tanzania,-9.49372,33.15852
+tz49,Langi,lang1320,lag,atla1278,mbug1243,Tanzania,-4.71413,35.9517
+tz50,Luguru,lugu1238,ruf,atla1278,east2756,Tanzania,-6.86828,37.5557
+tz51,Machame,mach1266,jmc,atla1278,west2852,Tanzania,-3.29385,37.0703
+tz52,Machinga,mach1265,mvw,atla1278,unun9916,Tanzania,-9.37101,39.4268
+tz53,Magoma,mago1246,gmx,atla1278,king1258,Tanzania,-9.23498,33.9826
+tz54,Makhuwa-Meetto,makh1261,mgh,atla1278,maku1279,Tanzania,-11.9553,38.6874
+tz55,Makonde,mako1251,kde,atla1278,mako1254,Tanzania,-10.9906,39.5133
+tz56,Makwe,makw1236,ymk,atla1278,mako1254,Tanzania,-10.4673,40.0274
+tz57,Malila,mali1279,mgq,atla1278,mbey1234,Tanzania,-9.16619,33.339
+tz58,Mambwe-Lungu,mamb1296,mgr,atla1278,malu1251,Tanzania,-8.86817,31.2269
+tz59,Manda-Matumba,mand1423,mgs,atla1278,mand1475,Tanzania,-10.3991,34.7424
+tz60,Masai,masa1300,mas,nilo1247,nucl1431,Tanzania,-3.1419,36.4573
+tz61,Matengo,mate1258,mgv,atla1278,mate1261,Tanzania,-11.554,35.0056
+tz62,Matumbi,matu1259,mgw,atla1278,matu1263,Tanzania,-8.53734,39.0409
+tz63,Mbugu,mbug1240,mhd,atla1278,pare1277,Tanzania,-4.72863,38.3519
+tz64,Mbugwe,mbug1242,mgz,atla1278,mbug1243,Tanzania,-3.75763,35.8133
+tz65,Mbunga,mbun1248,mgy,atla1278,rufi1236,Tanzania,-8.19661,36.5362
+tz66,Mediak,medi1249,mwx,book1242,book1242,Tanzania,-2.780485,36.59766
+tz67,Mochi,moch1256,old,atla1278,cent2286,Tanzania,-3.33743,37.3357
+tz68,Mpoto,mpot1240,mpa,atla1278,mate1261,Tanzania,-11.13767,34.71269
+tz69,Mwera (Chimwera),mwer1248,mwe,atla1278,yaoi1234,Tanzania,-9.75639,38.8762
+tz70,Mwera (Nyasa),mwer1247,mjh,atla1278,nyan1319,Tanzania,-11.3304,34.8959
+tz71,Mwini,mwin1241,,atla1278,swah1253,Tanzania,0.93435,43.56061
+tz72,Ndali,ndal1241,ndh,atla1278,nyak1264,Tanzania,-9.88948,33.6118
+tz73,Ndamba,ndam1239,ndj,atla1278,pogo1242,Tanzania,-8.40485,36.0271
+tz74,Ndendeule,nden1249,dne,atla1278,nden1251,Tanzania,-10.4203,36.0105
+tz75,Ndengereko,nden1248,ndg,atla1278,matu1263,Tanzania,-7.54628,38.958
+tz76,Ndonde Hamba,ndon1252,njd,book1242,book1242,Tanzania,-10.5584,38.1253
+tz77,Ndwewe,ndwe1234,nww,atla1278,rufi1236,Tanzania,-8.94,36.13
+tz78,Ngasa,ngas1238,nsg,nilo1247,onga1238,Tanzania,-2.97716,37.528
+tz79,Ngindo,ngin1244,nnq,atla1278,nden1251,Tanzania,-9.78145,37.9832
+tz80,Ngoreme,ngur1263,ngq,atla1278,west2987,Tanzania,-1.8485,34.6173
+tz81,Ngulu,ngul1246,ngp,atla1278,zigu1243,Tanzania,-5.79734,37.6823
+tz82,Nilamba,nila1242,nim,atla1278,nyat1247,Tanzania,-4.50002,34.3068
+tz83,Nindi,nind1242,nxi,atla1278,unun9917,Tanzania,-11.2569,36.3116
+tz84,Nyakyusa-Ngonde,nyak1260,nyy,atla1278,nyak1264,Tanzania,-9.71018,33.7763
+tz85,Nyamwanga,nyam1275,mwn,atla1278,malu1251,Tanzania,-9.11261,32.3163
+tz86,Nyamwezi,nyam1276,nym,atla1278,nyam1286,Tanzania,-5.08559,32.94452
+tz87,Nyanja,nyan1308,nya,atla1278,nyan1319,Tanzania,-14.8047,32.8108
+tz88,Nyaturu,nyat1246,rim,atla1278,nyat1247,Tanzania,-5.12263,34.6657
+tz89,Nyiha (Malawi),nyih1239,nyr,atla1278,mboz1234,Tanzania,-9.5372,33.0995
+tz90,Nyiha (Tanzania),nyih1240,nih,atla1278,mboz1234,Tanzania,-9.4472,32.9057
+tz91,Nyika (Tanzania),nyik1247,nkt,atla1278,nyik1249,Tanzania,-8.133,31.8127
+tz92,Okiek,okie1245,oki,nilo1247,okie1247,Tanzania,-2.78048,36.5977
+tz93,Pangwa,pang1287,pbr,atla1278,kisi1244,Tanzania,-9.96782,34.8039
+tz94,Pimbwe,pimb1238,piw,atla1278,mwik1240,Tanzania,-6.81358,31.4289
+tz95,Pogolo,pogo1243,poy,atla1278,pogo1242,Tanzania,-8.72283,36.4148
+tz96,Rombo,romb1244,rof,atla1278,chag1250,Tanzania,-3.07772,37.5382
+tz97,Rufiji,rufi1234,rui,book1242,book1242,Tanzania,-7.99059,38.7133
+tz98,Rungwa,rung1255,rnw,atla1278,malu1251,Tanzania,-7.24959,31.7614
+tz99,Rwa,rwaa1238,rwk,atla1278,west2852,Tanzania,-3.42862,36.7686
+tz100,Safwa,safw1238,sbk,atla1278,mbey1234,Tanzania,-8.54936,33.4766
+tz101,Sagala,saga1256,sbm,atla1278,vidu1239,Tanzania,-6.98537,36.9153
+tz102,Sandawe,sand1273,sad,,,Tanzania,-5.26918,35.4808
+tz103,Sangu (Tanzania),sang1330,sbp,atla1278,wanj1243,Tanzania,-8.4,33.9
+tz104,Segeju,sege1246,seg,atla1278,sout3204,Tanzania,-5.00659,39.12249
+tz105,Shambala,sham1280,ksb,atla1278,bond1249,Tanzania,-4.8,38.29
+tz106,Shubi,shub1238,suj,atla1278,hang1264,Tanzania,-2.97663,31.0681
+tz107,Sichela,sich1239,,atla1278,wand1264,Tanzania,-8.51176,32.66077
+tz108,Suba-Simbiti,suba1252,ssc,atla1278,kuri1276,Tanzania,-1.103296,34.268
+tz109,Subi,subi1247,xsj,atla1278,zinz1238,Tanzania,-2.93387,31.3594
+tz110,Sukuma,suku1261,suk,atla1278,nyam1286,Tanzania,-3.16082,32.8765
+tz111,Sumbwa,sumb1240,suw,atla1278,suku1274,Tanzania,-3.47335,31.9457
+tz112,Tanzanian Ngoni,tanz1241,xnj,atla1278,ngon1269,Tanzania,-11.779,35.459
+tz113,Temi,temi1247,soz,atla1278,giku1234,Tanzania,-2.19303,35.8035
+tz114,Tongwe,tong1320,tny,atla1278,bend1261,Tanzania,-6.43051,30.0807
+tz115,Vidunda,vidu1238,vid,atla1278,vidu1239,Tanzania,-7.52674,36.9316
+tz116,Vinza,vinz1238,vin,atla1278,rwan1241,Tanzania,-4.99312,30.5699
+tz117,Vunjo,vunj1238,vun,atla1278,cent2286,Tanzania,-3.42531,37.5847
+tz118,Vwanji,vwan1235,wbi,atla1278,wanj1243,Tanzania,-9.00683,34.0757
+tz119,Wanda,wand1264,wbh,atla1278,malu1251,Tanzania,-8.34522,32.4375
+tz120,Yao,yaoo1241,yao,atla1278,yaoi1234,Tanzania,-13.6119,35.2387
+tz121,Zanaki,zana1238,zak,atla1278,sout3373,Tanzania,-2.26367,34.0542
+tz122,Zaramo,zara1247,zaj,atla1278,kutu1267,Tanzania,-6.87705,38.9258
+tz123,Zigula-Mushungulu,zigu1244,ziw,atla1278,zigu1243,Tanzania,-5.61864,38.41138
+tz124,Zinza,zinz1238,zin,atla1278,ruta1242,Tanzania,-2.64132,32.1755
+ug1,Acoli,acol1236,ach,nilo1247,sout2831,Uganda,3.57738,32.5147
+ug2,Adhola,adho1243,adh,nilo1247,adho1242,Uganda,0.73235,34.0341
+ug3,Amba (Uganda),amba1263,rwm,atla1278,komo1265,Uganda,0.81206,30.0014
+ug4,Aringa,arin1244,luc,cent2225,cent2043,Uganda,3.56143,31.3071
+ug5,Chiga,chig1238,cgg,atla1278,nkor1241,Uganda,-1.04387,29.9122
+ug6,Ganda,gand1255,lug,atla1278,nort3220,Uganda,0.66884,32.15153
+ug7,Gungu,gung1250,rub,atla1278,grea1289,Uganda,2.06754,31.4819
+ug8,Gwere,gwer1238,gwr,atla1278,east2912,Uganda,1.11392,33.8227
+ug9,Ik,ikkk1242,ikx,kuli1252,kuli1252,Uganda,3.61407,34.2507
+ug10,Karamojong,kara1483,kdj,nilo1247,turk1307,Uganda,2.45157,34.2761
+ug11,Kenyi,keny1278,lke,atla1278,soga1244,Uganda,1.1513,33.4791
+ug12,Konzo,konz1239,koo,atla1278,konz1238,Uganda,0.32395,29.8696
+ug13,Kumam,kuma1275,kdi,nilo1247,lang1323,Uganda,1.74748,33.2116
+ug14,Kupsabiny,kups1238,kpz,nilo1247,elgo1240,Uganda,1.33197,34.5991
+ug15,Labwor,labw1238,lth,nilo1247,acol1236,Uganda,2.699942,33.657947
+ug16,Lango (Uganda),lang1324,laj,nilo1247,lang1323,Uganda,2.13867,33.0553
+ug17,Lugbara,lugb1240,lgg,cent2225,cent2043,Uganda,3.02245,30.8642
+ug18,Ma'di,madi1260,mhi,cent2225,sout2827,Uganda,3.62499,31.8471
+ug19,Masaaba,masa1299,myx,atla1278,nort3404,Uganda,1.05906,34.2829
+ug20,Nyang'i,nyan1313,nyp,kuli1252,ngan1305,Uganda,3.4997,33.73651
+ug21,Nyankole,nyan1307,nyn,atla1278,nkor1241,Uganda,-0.46364,30.548
+ug22,Nyole,nyol1238,nuj,atla1278,saam1286,Uganda,0.88072,33.9181
+ug23,Nyoro,nyor1246,nyo,atla1278,nyor1247,Uganda,0.95294,31.3493
+ug24,Ruuli,ruul1235,ruc,atla1278,nort3228,Uganda,1.41726,32.4179
+ug25,Saamia,saam1283,lsm,atla1278,saam1286,Uganda,0.3652,34.0335
+ug26,Soga,soga1242,xog,atla1278,soga1244,Uganda,0.40456,33.3942
+ug27,Soo,sooo1256,teu,kuli1252,ngan1305,Uganda,2.58367,34.7595
+ug28,Southern Ma'di,sout2828,snm,cent2225,sout2827,Uganda,2.8735,31.25
+ug29,Syan,syan1242,,atla1278,east2912,Uganda,1.280475,34.337012
+ug30,Teso,teso1249,teo,nilo1247,teso1248,Uganda,1.18321,33.9394
+ug31,Tooro,toor1238,ttj,atla1278,nyor1247,Uganda,0.57291,30.6389
