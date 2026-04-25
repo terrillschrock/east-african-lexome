@@ -1,5 +1,11 @@
 blank_issues_enabled: false
 contact_links:
+<<<<<<< HEAD
   - name: Contribute lexical data via email
     url: https://github.com/terrillschrock/east-african-lexome#contributing
     about: Lexical data and concept contributions are accepted by email. See the README for details.
+=======
+  - name: Email contributions
+    url: https://github.com/terrillschrock
+    about: Email lexical data submissions to the project lead.
+>>>>>>> 18d8c00b028611471eaab098cfc39d9c2fa7c835
