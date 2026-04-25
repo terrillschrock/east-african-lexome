@@ -1,0 +1,59 @@
+name: Data Correction
+description: Report an error in language metadata, source citation, parameter gloss, or other data
+title: "[Data] "
+labels: ["data-correction"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for helping improve EALex! Please describe the error and the correction as precisely as possible.
+        If you have a source for the correction, please include it.
+
+  - type: dropdown
+    id: file
+    attributes:
+      label: Which file or table contains the error?
+      options:
+        - languages.csv (LanguageTable)
+        - parameters.csv (ParameterTable)
+        - forms.csv (FormTable)
+        - sources.bib (SourceTable)
+        - orthographies.csv (OrthoRegistry)
+        - cognates.csv / cognatesets.csv
+        - README or documentation
+        - Other (please specify below)
+    validations:
+      required: true
+
+  - type: input
+    id: identifier
+    attributes:
+      label: Specific row identifier
+      description: e.g. EALex ID (lexome_swah-tz), CAWL_ID, source bibkey, or row number
+      placeholder: lexome_swah-tz
+    validations:
+      required: false
+
+  - type: textarea
+    id: error
+    attributes:
+      label: What is the error?
+      description: Describe the current value and why it is incorrect.
+    validations:
+      required: true
+
+  - type: textarea
+    id: correction
+    attributes:
+      label: What should it be instead?
+      description: Provide the correct value and any context.
+    validations:
+      required: true
+
+  - type: textarea
+    id: source
+    attributes:
+      label: Source for the correction (if applicable)
+      description: Citation, URL, or your own expertise. Include page numbers where relevant.
+    validations:
+      required: false

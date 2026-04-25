@@ -1,0 +1,77 @@
+name: New Language Proposal
+description: Suggest a language, dialect, or variety that should be added to EALex
+title: "[Language] "
+labels: ["new-language"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        EALex covers 420 languages across 10 East African nations. If you believe a language is missing
+        or that a variety currently treated as a dialect should be elevated to language status, please
+        provide the details below.
+
+  - type: input
+    id: name
+    attributes:
+      label: Language name
+      placeholder: e.g. Tirma-Chai
+    validations:
+      required: true
+
+  - type: input
+    id: glottocode
+    attributes:
+      label: Glottocode (if known)
+      description: 4 letters + 4 digits, e.g. tirm1234
+    validations:
+      required: false
+
+  - type: input
+    id: iso
+    attributes:
+      label: ISO 639-3 code (if assigned)
+    validations:
+      required: false
+
+  - type: dropdown
+    id: country
+    attributes:
+      label: Primary country
+      options:
+        - Burundi
+        - Eritrea
+        - Ethiopia
+        - Kenya
+        - Rwanda
+        - Somalia
+        - South Sudan
+        - Sudan
+        - Tanzania
+        - Uganda
+        - Other (specify below)
+    validations:
+      required: true
+
+  - type: textarea
+    id: family
+    attributes:
+      label: Language family / classification
+      description: e.g. Nilo-Saharan > Surmic; Atlantic-Congo > Bantu E.50
+    validations:
+      required: false
+
+  - type: textarea
+    id: rationale
+    attributes:
+      label: Why should this language be added?
+      description: Explain why this language merits inclusion (e.g. distinct from related varieties, has documented speakers, has lexical resources available).
+    validations:
+      required: true
+
+  - type: textarea
+    id: sources
+    attributes:
+      label: Available sources
+      description: List any grammars, dictionaries, wordlists, or fieldwork that could provide lexical data.
+    validations:
+      required: false

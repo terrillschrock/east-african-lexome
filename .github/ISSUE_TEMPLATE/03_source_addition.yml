@@ -1,0 +1,73 @@
+name: Source Addition Proposal
+description: Suggest a dictionary, grammar, wordlist, or other source that should be added to the SourceTable
+title: "[Source] "
+labels: ["source-addition"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        EALex's SourceTable is the bibliographic backbone of the project. Help us expand it!
+
+  - type: input
+    id: bibkey
+    attributes:
+      label: Suggested bibkey
+      description: Short identifier in AuthorYear format, e.g. Schrock2014
+      placeholder: AuthorYear
+    validations:
+      required: false
+
+  - type: dropdown
+    id: type
+    attributes:
+      label: Source type
+      options:
+        - dictionary
+        - grammar
+        - wordlist
+        - field notes
+        - corpus
+        - article
+        - thesis / dissertation
+        - other
+    validations:
+      required: true
+
+  - type: textarea
+    id: citation
+    attributes:
+      label: Full citation
+      description: Author, year, title, publisher, place of publication.
+    validations:
+      required: true
+
+  - type: input
+    id: languages
+    attributes:
+      label: Languages covered
+      description: e.g. lexome_amha-et (Amharic), or "various Surmic"
+    validations:
+      required: true
+
+  - type: input
+    id: url
+    attributes:
+      label: URL or DOI (if available)
+    validations:
+      required: false
+
+  - type: textarea
+    id: copyright
+    attributes:
+      label: Copyright / availability status
+      description: Public domain? CC-licensed? Out of print? Available where?
+    validations:
+      required: false
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: Additional notes
+      description: Quality of lexical data, rough number of entries, special features, etc.
+    validations:
+      required: false

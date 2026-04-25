@@ -1,0 +1,12 @@
+name: General Question or Discussion
+description: Ask a question or open a discussion about the project
+title: "[Question] "
+labels: ["question"]
+body:
+  - type: textarea
+    id: question
+    attributes:
+      label: Your question or topic
+      description: Ask anything about EALex's methodology, scope, data, contribution process, or future plans.
+    validations:
+      required: true
