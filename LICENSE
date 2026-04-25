@@ -1,0 +1,75 @@
+Creative Commons Attribution 4.0 International License (CC BY 4.0)
+
+Copyright (c) 2026 Terrill Schrock
+
+This work is licensed under the Creative Commons Attribution 4.0
+International License. To view a copy of this license, visit:
+
+    https://creativecommons.org/licenses/by/4.0/
+
+Or send a letter to:
+
+    Creative Commons
+    PO Box 1866
+    Mountain View, CA 94042
+    USA
+
+
+─────────────────────────────────────────────────────────────────────
+SUMMARY (not a substitute for the full license text)
+─────────────────────────────────────────────────────────────────────
+
+You are free to:
+
+  Share — copy and redistribute the material in any medium or format
+          for any purpose, even commercially.
+
+  Adapt — remix, transform, and build upon the material for any
+          purpose, even commercially.
+
+The licensor cannot revoke these freedoms as long as you follow
+the license terms.
+
+Under the following terms:
+
+  Attribution — You must give appropriate credit, provide a link
+                to the license, and indicate if changes were made.
+                You may do so in any reasonable manner, but not
+                in any way that suggests the licensor endorses
+                you or your use.
+
+  No additional restrictions — You may not apply legal terms or
+                technological measures that legally restrict others
+                from doing anything the license permits.
+
+
+─────────────────────────────────────────────────────────────────────
+HOW TO CITE
+─────────────────────────────────────────────────────────────────────
+
+Schrock, Terrill (2026). East African Lexome (EALex):
+A Comparative Lexical Database for East African Languages.
+https://github.com/terrillschrock/East-African-Lexome
+
+
+─────────────────────────────────────────────────────────────────────
+NOTE ON UPSTREAM SOURCES
+─────────────────────────────────────────────────────────────────────
+
+This dataset draws on, references, and builds upon other open
+scholarly resources, each with its own license:
+
+  - Glottolog 5.2 (Hammarström et al. 2025) — CC BY 4.0
+  - Concepticon — CC BY 4.0
+  - SIL Comparative African Wordlist (SILCAWL) — see SIL terms
+
+Lexical forms harvested from third-party dictionaries, grammars,
+and wordlists remain subject to the copyright of their original
+authors and publishers. EALex distributes only metadata, structural
+classifications, and lexical data either (a) released under
+compatible open licenses, (b) gathered through fair-use comparative
+research practices typical of historical linguistics, or
+(c) contributed directly under CC BY 4.0 by their original holders.
+
+Researchers and contributors are responsible for ensuring that
+data they submit to EALex respects the rights of original sources.
