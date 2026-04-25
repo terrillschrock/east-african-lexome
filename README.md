@@ -54,7 +54,7 @@ Researchers working on poorly-documented languages in scope of EALex (particular
 
 ## Citation
 
-> Schrock, Terrill (2026). *East African Lexome (EALex): A Comparative Lexical Database for East African Languages.* https://github.com/terrillschrock/East-African-Lexome
+> Schrock, Terrill (2026). *East African Lexome (EALex): A Comparative Lexical Database for East African Languages.* https://github.com/terrillschrock/east-african-lexome
 
 ## License
 
