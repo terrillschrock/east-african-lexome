@@ -1,5 +1,5 @@
-blank_issues_enabled: falsey
+blank_issues_enabled: false
 contact_links:
-  - name: Contribute lexical data via email
-    url: mailto:terrill.schrock@gmail.com 
-    about: Currently, lexical data contributions are accepted by email rather than through GitHub. Please email completed contribution spreadsheets directly.
+  - name: Email contributions
+    url: mailto:terrill.schrock@gmail.com
+    about: Email lexical data submissions to the project lead.
