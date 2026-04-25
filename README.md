@@ -48,9 +48,24 @@ EALex is in the **infrastructure-building phase**. The languoid list, concept li
 
 ## Contributing
 
-EALex is currently maintained as a **curated dataset** by the project lead, with a view toward opening more broadly to trusted collaborators as the project matures. If you have lexical data, regional expertise, or sources you would like to contribute, please get in touch.
+EALex is currently maintained as a **curated dataset** by the project lead, with a view toward opening more broadly to trusted collaborators as the project matures.
+
+### Lexical data and concept contributions
+
+During the current phase, lexical data and concept-list additions are being collected by **email** rather than through GitHub directly. This keeps the contribution process accessible to linguists and area specialists who may not be familiar with version control workflows.
+
+To contribute:
+
+1. Email **terrill.schrock@gmail.com** with a brief description of what you'd like to contribute (e.g. "wordlist for [language]" or "regional concept additions in domain X")
+2. The project lead will respond with the appropriate template spreadsheet
+3. Complete the spreadsheet and email it back
+4. Contributions are integrated into the master dataset and acknowledged in the project's release notes
 
 Researchers working on poorly-documented languages in scope of EALex (particularly in Sudan, South Sudan, and the smaller Kordofanian and Surmic groups) are especially encouraged to reach out — the SourceTable already documents where the documentation gaps are most acute, and EALex aims not just to be a data repository but a research roadmap.
+
+### Issue reports
+
+For data corrections, new language proposals, source additions, and general questions, please use the [Issues](../../issues/new/choose) tab to submit a structured report.
 
 ## Citation
 
