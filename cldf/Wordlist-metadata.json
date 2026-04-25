@@ -1,1 +1,507 @@
-
+{
+  "@context": [
+    "http://www.w3.org/ns/csvw",
+    {
+      "@language": "en"
+    }
+  ],
+  "dc:conformsTo": "http://cldf.clld.org/v1.0/terms.rdf#Wordlist",
+  "dc:title": "East African Lexome (EALex)",
+  "dc:description": "A comprehensive comparative lexical database of 420 languages spoken across ten East African nations (Burundi, Eritrea, Ethiopia, Kenya, Rwanda, Somalia, South Sudan, Sudan, Tanzania, Uganda). Designed as research infrastructure for African historical linguistics in the era of computational and quantitative methods.",
+  "dc:creator": [
+    {
+      "name": "Schrock, Terrill",
+      "role": "Project Lead"
+    }
+  ],
+  "dc:subject": [
+    "African languages",
+    "East Africa",
+    "historical linguistics",
+    "comparative linguistics",
+    "lexicostatistics",
+    "lexomics"
+  ],
+  "dc:license": "https://creativecommons.org/licenses/by/4.0/",
+  "dc:bibliographicCitation": "Schrock, Terrill (2026). East African Lexome (EALex). Comparative lexical database. https://github.com/[username]/East-African-Lexome",
+  "rdf:ID": "ealex",
+  "rdf:type": "http://www.w3.org/ns/dcat#Dataset",
+  "dialect": {
+    "commentPrefix": null,
+    "delimiter": ",",
+    "doubleQuote": true,
+    "encoding": "utf-8",
+    "header": true,
+    "headerRowCount": 1,
+    "quoteChar": "\"",
+    "skipBlankRows": false,
+    "skipColumns": 0,
+    "skipInitialSpace": false,
+    "skipRows": 0,
+    "trim": false
+  },
+  "tables": [
+    {
+      "url": "languages.csv",
+      "dc:conformsTo": "http://cldf.clld.org/v1.0/terms.rdf#LanguageTable",
+      "tableSchema": {
+        "columns": [
+          {
+            "name": "ID",
+            "datatype": {
+              "base": "string",
+              "format": "[a-zA-Z0-9_\\-]+"
+            },
+            "propertyUrl": "http://cldf.clld.org/v1.0/terms.rdf#id",
+            "required": true
+          },
+          {
+            "name": "Name",
+            "datatype": "string",
+            "propertyUrl": "http://cldf.clld.org/v1.0/terms.rdf#name",
+            "required": true
+          },
+          {
+            "name": "Glottocode",
+            "propertyUrl": "http://cldf.clld.org/v1.0/terms.rdf#glottocode",
+            "datatype": {
+              "base": "string",
+              "format": "[a-z0-9]{4}[1-9][0-9]{3}"
+            }
+          },
+          {
+            "name": "ISO639P3code",
+            "propertyUrl": "http://cldf.clld.org/v1.0/terms.rdf#iso639P3code",
+            "datatype": {
+              "base": "string",
+              "format": "[a-z]{3}"
+            }
+          },
+          {
+            "name": "Latitude",
+            "propertyUrl": "http://cldf.clld.org/v1.0/terms.rdf#latitude",
+            "datatype": {
+              "base": "decimal",
+              "minimum": -90,
+              "maximum": 90
+            }
+          },
+          {
+            "name": "Longitude",
+            "propertyUrl": "http://cldf.clld.org/v1.0/terms.rdf#longitude",
+            "datatype": {
+              "base": "decimal",
+              "minimum": -180,
+              "maximum": 180
+            }
+          },
+          {
+            "name": "Macroarea",
+            "propertyUrl": "http://cldf.clld.org/v1.0/terms.rdf#macroarea"
+          },
+          {
+            "name": "Family",
+            "datatype": "string"
+          },
+          {
+            "name": "Subfamily",
+            "datatype": "string"
+          },
+          {
+            "name": "Country",
+            "datatype": "string"
+          },
+          {
+            "name": "EA_Countries",
+            "datatype": "string",
+            "dc:description": "All East African countries where the language is spoken (pipe-separated ISO 3166-1 alpha-2 codes)"
+          },
+          {
+            "name": "Speaker_Population",
+            "datatype": "string"
+          },
+          {
+            "name": "Endangerment",
+            "datatype": {
+              "base": "string",
+              "format": "not_endangered|threatened|shifting|moribund|nearly_extinct|extinct|"
+            }
+          },
+          {
+            "name": "Source_Name",
+            "datatype": "string"
+          },
+          {
+            "name": "Comment",
+            "datatype": "string"
+          }
+        ]
+      }
+    },
+    {
+      "url": "parameters.csv",
+      "dc:conformsTo": "http://cldf.clld.org/v1.0/terms.rdf#ParameterTable",
+      "tableSchema": {
+        "columns": [
+          {
+            "name": "ID",
+            "datatype": {
+              "base": "string",
+              "format": "[a-zA-Z0-9_\\-]+"
+            },
+            "propertyUrl": "http://cldf.clld.org/v1.0/terms.rdf#id",
+            "required": true
+          },
+          {
+            "name": "Name",
+            "datatype": "string",
+            "propertyUrl": "http://cldf.clld.org/v1.0/terms.rdf#name",
+            "required": true
+          },
+          {
+            "name": "CAWL_ID",
+            "datatype": "string",
+            "dc:description": "SILCAWL 4-digit identifier"
+          },
+          {
+            "name": "Source",
+            "datatype": "string",
+            "dc:description": "Origin of the concept: CAWL, LJ100, Swadesh, EALEX, etc."
+          },
+          {
+            "name": "Tier",
+            "datatype": {
+              "base": "string",
+              "format": "core|extended|"
+            }
+          },
+          {
+            "name": "Concepticon_ID",
+            "datatype": "string",
+            "propertyUrl": "http://cldf.clld.org/v1.0/terms.rdf#concepticonReference"
+          },
+          {
+            "name": "Concepticon_Gloss",
+            "datatype": "string"
+          },
+          {
+            "name": "Semantic_Field",
+            "datatype": "string"
+          },
+          {
+            "name": "Part_Of_Speech",
+            "datatype": "string"
+          },
+          {
+            "name": "Swadesh_100",
+            "datatype": "string"
+          },
+          {
+            "name": "Swadesh_207",
+            "datatype": "string"
+          },
+          {
+            "name": "LJ_100",
+            "datatype": "string"
+          },
+          {
+            "name": "Comment",
+            "datatype": "string"
+          }
+        ]
+      }
+    },
+    {
+      "url": "forms.csv",
+      "dc:conformsTo": "http://cldf.clld.org/v1.0/terms.rdf#FormTable",
+      "tableSchema": {
+        "columns": [
+          {
+            "name": "ID",
+            "datatype": {
+              "base": "string",
+              "format": "[a-zA-Z0-9_\\-]+"
+            },
+            "propertyUrl": "http://cldf.clld.org/v1.0/terms.rdf#id",
+            "required": true
+          },
+          {
+            "name": "Language_ID",
+            "propertyUrl": "http://cldf.clld.org/v1.0/terms.rdf#languageReference",
+            "required": true
+          },
+          {
+            "name": "Parameter_ID",
+            "propertyUrl": "http://cldf.clld.org/v1.0/terms.rdf#parameterReference",
+            "required": true
+          },
+          {
+            "name": "Form",
+            "datatype": "string",
+            "propertyUrl": "http://cldf.clld.org/v1.0/terms.rdf#form",
+            "required": true
+          },
+          {
+            "name": "Segments",
+            "datatype": "string",
+            "propertyUrl": "http://cldf.clld.org/v1.0/terms.rdf#segments",
+            "separator": " "
+          },
+          {
+            "name": "Source_Form",
+            "datatype": "string"
+          },
+          {
+            "name": "IPA",
+            "datatype": "string"
+          },
+          {
+            "name": "Orthography",
+            "datatype": "string"
+          },
+          {
+            "name": "Loan",
+            "datatype": "string"
+          },
+          {
+            "name": "LoanSource_Language",
+            "datatype": "string"
+          },
+          {
+            "name": "Cognate_ID",
+            "datatype": "string"
+          },
+          {
+            "name": "Cognate_Set_ID",
+            "datatype": "string"
+          },
+          {
+            "name": "Value",
+            "datatype": "string",
+            "propertyUrl": "http://cldf.clld.org/v1.0/terms.rdf#value"
+          },
+          {
+            "name": "Comment",
+            "datatype": "string"
+          },
+          {
+            "name": "Source",
+            "datatype": "string",
+            "propertyUrl": "http://cldf.clld.org/v1.0/terms.rdf#source",
+            "separator": ";"
+          },
+          {
+            "name": "Source_Page",
+            "datatype": "string"
+          },
+          {
+            "name": "Elicitation_Context",
+            "datatype": "string"
+          },
+          {
+            "name": "Collector",
+            "datatype": "string"
+          },
+          {
+            "name": "Collection_Date",
+            "datatype": "string"
+          },
+          {
+            "name": "Confidence",
+            "datatype": {
+              "base": "string",
+              "format": "HIGH|MEDIUM|LOW|"
+            }
+          }
+        ],
+        "foreignKeys": [
+          {
+            "columnReference": [
+              "Language_ID"
+            ],
+            "reference": {
+              "resource": "languages.csv",
+              "columnReference": [
+                "ID"
+              ]
+            }
+          },
+          {
+            "columnReference": [
+              "Parameter_ID"
+            ],
+            "reference": {
+              "resource": "parameters.csv",
+              "columnReference": [
+                "ID"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "url": "cognates.csv",
+      "dc:conformsTo": "http://cldf.clld.org/v1.0/terms.rdf#CognateTable",
+      "tableSchema": {
+        "columns": [
+          {
+            "name": "ID",
+            "datatype": {
+              "base": "string",
+              "format": "[a-zA-Z0-9_\\-]+"
+            },
+            "propertyUrl": "http://cldf.clld.org/v1.0/terms.rdf#id",
+            "required": true
+          },
+          {
+            "name": "Form_ID",
+            "propertyUrl": "http://cldf.clld.org/v1.0/terms.rdf#formReference",
+            "required": true
+          },
+          {
+            "name": "Cognateset_ID",
+            "propertyUrl": "http://cldf.clld.org/v1.0/terms.rdf#cognatesetReference",
+            "required": true
+          },
+          {
+            "name": "Alignment",
+            "datatype": "string"
+          },
+          {
+            "name": "Alignment_Method",
+            "datatype": "string"
+          },
+          {
+            "name": "Doubt",
+            "datatype": "string"
+          },
+          {
+            "name": "Comment",
+            "datatype": "string"
+          },
+          {
+            "name": "Source",
+            "datatype": "string"
+          }
+        ],
+        "foreignKeys": [
+          {
+            "columnReference": [
+              "Form_ID"
+            ],
+            "reference": {
+              "resource": "forms.csv",
+              "columnReference": [
+                "ID"
+              ]
+            }
+          },
+          {
+            "columnReference": [
+              "Cognateset_ID"
+            ],
+            "reference": {
+              "resource": "cognatesets.csv",
+              "columnReference": [
+                "ID"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "url": "cognatesets.csv",
+      "dc:conformsTo": "http://cldf.clld.org/v1.0/terms.rdf#CognatesetTable",
+      "tableSchema": {
+        "columns": [
+          {
+            "name": "ID",
+            "datatype": {
+              "base": "string",
+              "format": "[a-zA-Z0-9_\\-]+"
+            },
+            "propertyUrl": "http://cldf.clld.org/v1.0/terms.rdf#id",
+            "required": true
+          },
+          {
+            "name": "Description",
+            "datatype": "string"
+          },
+          {
+            "name": "Proto_Form",
+            "datatype": "string"
+          },
+          {
+            "name": "Proto_Language",
+            "datatype": "string"
+          },
+          {
+            "name": "Comment",
+            "datatype": "string"
+          }
+        ]
+      }
+    },
+    {
+      "url": "orthographies.csv",
+      "dc:description": "Custom registry of orthography systems used in source materials.",
+      "tableSchema": {
+        "columns": [
+          {
+            "name": "Ortho_ID",
+            "datatype": "string",
+            "required": true
+          },
+          {
+            "name": "Name",
+            "datatype": "string",
+            "required": true
+          },
+          {
+            "name": "Language_Family",
+            "datatype": "string"
+          },
+          {
+            "name": "Region",
+            "datatype": "string"
+          },
+          {
+            "name": "Era",
+            "datatype": "string"
+          },
+          {
+            "name": "Colonial_Power",
+            "datatype": "string"
+          },
+          {
+            "name": "Script",
+            "datatype": "string"
+          },
+          {
+            "name": "Tonal_Marking",
+            "datatype": "string"
+          },
+          {
+            "name": "Key_Features",
+            "datatype": "string"
+          },
+          {
+            "name": "IPA_Notes",
+            "datatype": "string"
+          },
+          {
+            "name": "Reference",
+            "datatype": "string"
+          },
+          {
+            "name": "Comment",
+            "datatype": "string"
+          }
+        ]
+      }
+    }
+  ],
+  "sources": "sources.bib"
+}
