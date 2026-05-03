@@ -63,6 +63,8 @@ To contribute:
 
 Researchers working on poorly-documented languages in scope of EALex (particularly in Sudan, South Sudan, and the smaller Kordofanian and Surmic groups) are especially encouraged to reach out — the SourceTable already documents where the documentation gaps are most acute, and EALex aims not just to be a data repository but a research roadmap.
 
+All contributors are asked to review the project's [Ethics Statement](ETHICS.md), which describes how published-source data and direct contributions are handled, the takedown and correction process, and EALex's broader ethical commitments.
+
 ### Issue reports
 
 For data corrections, new language proposals, source additions, and general questions, please use the [Issues](../../issues/new/choose) tab to submit a structured report.

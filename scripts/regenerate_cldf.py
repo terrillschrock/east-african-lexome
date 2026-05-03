@@ -95,8 +95,9 @@ print(f"  parameters.csv:   {len(params):>5} rows")
 _, forms = sheet_to_rows("FormTable")
 form_cols = ["ID","Language_ID","Parameter_ID","Form","Segments","Source_Form",
              "IPA","Orthography","Loan","LoanSource_Language","Cognate_ID",
-             "Cognate_Set_ID","Value","Comment","Source","Source_Page",
-             "Elicitation_Context","Collector","Collection_Date","Confidence"]
+             "Cognate_Set_ID","Value","Comment","Source","Data_Source_Type",
+             "Source_Page","Elicitation_Context","Collector","Collection_Date",
+             "Confidence"]
 real_forms = [r for r in forms if r.get('ID') and r['ID'] not in ('form-001','example')]
 with open(f"{OUT}/forms.csv", "w", newline='', encoding='utf-8') as f:
     w = csv.DictWriter(f, fieldnames=form_cols)

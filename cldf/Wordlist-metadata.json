@@ -23,7 +23,7 @@
     "lexomics"
   ],
   "dc:license": "https://creativecommons.org/licenses/by/4.0/",
-  "dc:bibliographicCitation": "Schrock, Terrill (2026). East African Lexome (EALex). Comparative lexical database. https://github.com/[username]/East-African-Lexome",
+  "dc:bibliographicCitation": "Schrock, Terrill (2026). East African Lexome (EALex). Comparative lexical database. https://github.com/terrillschrock/east-african-lexome",
   "rdf:ID": "ealex",
   "rdf:type": "http://www.w3.org/ns/dcat#Dataset",
   "dialect": {
@@ -289,6 +289,14 @@
             "datatype": "string",
             "propertyUrl": "http://cldf.clld.org/v1.0/terms.rdf#source",
             "separator": ";"
+          },
+          {
+            "name": "Data_Source_Type",
+            "datatype": {
+              "base": "string",
+              "format": "published|direct_contribution|"
+            },
+            "dc:description": "How this datum reached EALex: 'published' for forms extracted from a published source listed in SourceTable, or 'direct_contribution' for forms submitted directly by a linguist or fieldworker. Distinguishes the two data streams described in the project's Ethics Statement."
           },
           {
             "name": "Source_Page",
