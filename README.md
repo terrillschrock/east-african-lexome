@@ -79,6 +79,10 @@ The dataset is released under the [Creative Commons Attribution 4.0 Internationa
 
 EALex is maintained by **Terrill Schrock**, a linguist with eight years of fieldwork on Ik, one of three remaining Kuliak languages of northeastern Uganda. Author of *A Grammar of Ik* (LOT, 2014) and *The Ik Language: Dictionary and Grammar Sketch* (Language Science Press, 2017).
 
+## A note on AI collaboration
+
+EALex is being built with the assistance of Anthropic's Claude as a sustained thinking partner and drafting tool. The AI plays a substantial role in compiling and organizing the source bibliography, drafting and refining documentation, structuring the CLDF schema, and helping stress-test methodological decisions through dialogue. The AI's outputs are reviewed, edited, and verified by the maintainer at every stage. Decisions about scholarly substance — the scope of the language inventory, the reconciliation of Glottolog and Ethnologue, the choice of CAWL as the concept-list backbone, override decisions for individual languages, and the project's overall methodological framing — remain the maintainer's. EALex is offered in the spirit of methodological transparency about how the project is being assembled.
+
 ## Acknowledgements
 
 EALex builds on the open scholarly infrastructure of [Glottolog](https://glottolog.org), [Concepticon](https://concepticon.clld.org), [CLDF](https://cldf.clld.org), and [SIL International](https://www.sil.org), as well as the descriptive labor of generations of Africanist linguists whose work fills the SourceTable. The project also draws on the network and community of the [Rift Valley Network](https://www.riftvalley.net).
