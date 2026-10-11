@@ -7,7 +7,7 @@
   ],
   "dc:conformsTo": "http://cldf.clld.org/v1.0/terms.rdf#Wordlist",
   "dc:title": "East African Lexome (EALex)",
-  "dc:description": "A comprehensive comparative lexical database of 420 languages spoken across ten East African nations (Burundi, Eritrea, Ethiopia, Kenya, Rwanda, Somalia, South Sudan, Sudan, Tanzania, Uganda). Designed as research infrastructure for African historical linguistics in the era of computational and quantitative methods.",
+  "dc:description": "A comprehensive comparative lexical database of 446 languages spoken across ten East African nations (Burundi, Eritrea, Ethiopia, Kenya, Rwanda, Somalia, South Sudan, Sudan, Tanzania, Uganda). Designed as research infrastructure for African historical linguistics in the era of computational and quantitative methods.",
   "dc:creator": [
     {
       "name": "Schrock, Terrill",
@@ -96,6 +96,11 @@
             }
           },
           {
+            "name": "EA_Countries",
+            "datatype": "string",
+            "dc:description": "All East African countries where the language is spoken (pipe-separated ISO 3166-1 alpha-2 codes)"
+          },
+          {
             "name": "Macroarea",
             "propertyUrl": "http://cldf.clld.org/v1.0/terms.rdf#macroarea"
           },
@@ -110,11 +115,6 @@
           {
             "name": "Country",
             "datatype": "string"
-          },
-          {
-            "name": "EA_Countries",
-            "datatype": "string",
-            "dc:description": "All East African countries where the language is spoken (pipe-separated ISO 3166-1 alpha-2 codes)"
           },
           {
             "name": "Speaker_Population",
@@ -159,21 +159,14 @@
             "required": true
           },
           {
-            "name": "CAWL_ID",
+            "name": "Source_Language",
             "datatype": "string",
-            "dc:description": "SILCAWL 4-digit identifier"
+            "dc:description": "Language of the source gloss, where not English."
           },
           {
-            "name": "Source",
+            "name": "Broader_ID",
             "datatype": "string",
-            "dc:description": "Origin of the concept: CAWL, LJ100, Swadesh, EALEX, etc."
-          },
-          {
-            "name": "Tier",
-            "datatype": {
-              "base": "string",
-              "format": "core|extended|"
-            }
+            "dc:description": "ID of a more general meaning in this table (general/specific hierarchy)."
           },
           {
             "name": "Concepticon_ID",
@@ -185,12 +178,18 @@
             "datatype": "string"
           },
           {
+            "name": "Concepticon_Mapping_Notes",
+            "datatype": "string",
+            "dc:description": "Notes on the mapping to Concepticon."
+          },
+          {
             "name": "Semantic_Field",
             "datatype": "string"
           },
           {
-            "name": "Part_Of_Speech",
-            "datatype": "string"
+            "name": "CAWL_ID",
+            "datatype": "string",
+            "dc:description": "SILCAWL 4-digit identifier"
           },
           {
             "name": "Swadesh_100",
@@ -207,6 +206,19 @@
           {
             "name": "Comment",
             "datatype": "string"
+          }
+        ],
+        "foreignKeys": [
+          {
+            "columnReference": [
+              "Broader_ID"
+            ],
+            "reference": {
+              "resource": "parameters.csv",
+              "columnReference": [
+                "ID"
+              ]
+            }
           }
         ]
       }
@@ -242,21 +254,47 @@
             "required": true
           },
           {
+            "name": "Source_Form",
+            "datatype": "string"
+          },
+          {
+            "name": "Morphological_Analysis",
+            "datatype": "string",
+            "dc:description": "Morpheme-level analysis of the form (label inventory in SCHEMA.md)."
+          },
+          {
+            "name": "Root",
+            "datatype": "string",
+            "dc:description": "Root of the form, with final hyphen for bound roots; the comparison layer."
+          },
+          {
             "name": "Segments",
             "datatype": "string",
             "propertyUrl": "http://cldf.clld.org/v1.0/terms.rdf#segments",
             "separator": " "
           },
           {
-            "name": "Source_Form",
-            "datatype": "string"
+            "name": "Plural_Form",
+            "datatype": "string",
+            "dc:description": "Recorded plural (IPA-normalised), including suppletive plurals."
           },
           {
-            "name": "IPA",
-            "datatype": "string"
+            "name": "Source_Plural",
+            "datatype": "string",
+            "dc:description": "Plural exactly as spelled in the source."
           },
           {
-            "name": "Orthography",
+            "name": "Part_Of_Speech",
+            "datatype": "string",
+            "dc:description": "Part of speech (standard codes, e.g. N, V, Adv, Conj.sub)."
+          },
+          {
+            "name": "Source_Gloss",
+            "datatype": "string",
+            "dc:description": "Gloss as given in the source."
+          },
+          {
+            "name": "Comment",
             "datatype": "string"
           },
           {
@@ -268,20 +306,16 @@
             "datatype": "string"
           },
           {
+            "name": "LoanSource_Form_ID",
+            "datatype": "string",
+            "dc:description": "ID of the donor form in this table, when the donor is also attested."
+          },
+          {
             "name": "Cognate_ID",
             "datatype": "string"
           },
           {
             "name": "Cognate_Set_ID",
-            "datatype": "string"
-          },
-          {
-            "name": "Value",
-            "datatype": "string",
-            "propertyUrl": "http://cldf.clld.org/v1.0/terms.rdf#value"
-          },
-          {
-            "name": "Comment",
             "datatype": "string"
           },
           {
@@ -313,13 +347,6 @@
           {
             "name": "Collection_Date",
             "datatype": "string"
-          },
-          {
-            "name": "Confidence",
-            "datatype": {
-              "base": "string",
-              "format": "HIGH|MEDIUM|LOW|"
-            }
           }
         ],
         "foreignKeys": [
@@ -340,6 +367,17 @@
             ],
             "reference": {
               "resource": "parameters.csv",
+              "columnReference": [
+                "ID"
+              ]
+            }
+          },
+          {
+            "columnReference": [
+              "LoanSource_Form_ID"
+            ],
+            "reference": {
+              "resource": "forms.csv",
               "columnReference": [
                 "ID"
               ]
@@ -371,6 +409,13 @@
             "name": "Cognateset_ID",
             "propertyUrl": "http://cldf.clld.org/v1.0/terms.rdf#cognatesetReference",
             "required": true
+          },
+          {
+            "name": "Segment_Slice",
+            "datatype": "string",
+            "dc:description": "Slice of the form's segments belonging to the cognate (CLDF segmentSlice).",
+            "propertyUrl": "http://cldf.clld.org/v1.0/terms.rdf#segmentSlice",
+            "separator": ";"
           },
           {
             "name": "Alignment",
@@ -507,6 +552,9 @@
             "name": "Comment",
             "datatype": "string"
           }
+        ],
+        "primaryKey": [
+          "Ortho_ID"
         ]
       }
     }

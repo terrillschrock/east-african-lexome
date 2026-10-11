@@ -15,8 +15,8 @@ Each stream carries a different ethical profile, and EALex commits to handling b
 For data drawn from published sources, EALex commits to:
 
 - **Full source attribution.** Every form in the dataset is linked to its bibliographic source. The provenance of every datum is preserved and transparent.
-- **No aggregation of culturally restricted material.** Where sources mark vocabulary as sacred, secret, restricted to particular contexts, or otherwise sensitive, EALex excludes that material from aggregation.
-- **Honest representation.** Data is presented with confidence flags where appropriate. Speculative or uncertain forms are marked as such. EALex does not over-represent the certainty of sources whose own data was preliminary.
+- **No aggregation of culturally restricted material.** Where sources mark vocabulary as sacred, secret, restricted to particular contexts, or otherwise sensitive, EALex excludes that material from aggregation. This commitment applies with particular force to language-specific vocabulary — ethnobiological terminology, ritual roles and practices, kinship and age-set categories, and other meanings that East African languages lexicalize in culturally embedded ways. EALex's data model accommodates such vocabulary as first-class data, which raises rather than lowers the standard of vigilance: the same model that lets the project document a community's distinctive lexicon also imposes responsibility for not aggregating material the community considers restricted.
+- **Honest representation.** Data is presented with appropriate caveats about uncertainty. Speculative or doubtful forms are noted in the Comment field rather than presented as confirmed, and source attribution is preserved so that downstream users can independently assess the reliability of any datum. EALex does not over-represent the certainty of sources whose own data was preliminary.
 - **Documentation of methodological choices.** Decisions about classification, inclusion, and reconciliation are documented openly — including cases where the project diverges from standard references like Glottolog or Ethnologue.
 
 For data contributed directly by linguists, EALex additionally commits to:
@@ -25,6 +25,18 @@ For data contributed directly by linguists, EALex additionally commits to:
 - **Clear attribution to the contributing linguist.** Direct contributions are credited to the linguist who collected and contributed the data, alongside any speech-community acknowledgements the contributor wishes to record.
 - **Distinction between data streams.** The dataset records whether each form was extracted from a published source or contributed directly, so that downstream researchers can trace data lineage.
 - **Responsibility for unpublished material.** Because direct contributions involve previously unpublished data, EALex takes special care to honor takedown and correction requests promptly, recognizing that the relationships between contributing linguists and the communities they work with are ongoing.
+
+## AI involvement in data work
+
+EALex is being assembled with substantive assistance from a large language model (Anthropic's Claude) acting as a sustained collaborator. The model's role goes beyond drafting documentation and includes participation in data-level work: helping organize and structure source bibliographies, assisting with the semantic domain tagging of incoming forms during imports, generating candidate analyses of citation forms into roots for maintainer review, and stress-testing methodological decisions through dialogue. This is a more substantive AI involvement than is typical in linguistic dataset projects, and EALex acknowledges it explicitly here rather than letting it sit unremarked.
+
+Three commitments govern how AI involvement is handled:
+
+- **Maintainer review of all AI-generated data.** Any data-level annotation produced or suggested by the AI — domain tags, root analyses, sense disambiguation, normalization decisions — passes through review by the project maintainer before being committed to the dataset. The AI generates candidates; the maintainer accepts, modifies, or overrides them. No AI output enters the dataset without that review.
+- **Recoverability of AI-assisted decisions.** Where AI assistance has shaped specific data — e.g., domain tags suggested by an AI tool and accepted by the maintainer — that provenance is recoverable. The methodology is documented in the project's accompanying notes, and the patterns of AI involvement are described in release notes for each version.
+- **Bias acknowledgment.** AI models trained on globally-distributed text data have known biases toward overrepresented languages and concepts. For East African languages — many of which are underrepresented in the training data of any large language model — AI suggestions are particularly likely to be wrong in specific, language-specific ways (folk-taxonomic categories that don't fit Indo-European-shaped expectations, ritual or pastoralist vocabulary outside the model's distribution, tonal and morphological structures that diverge from common patterns). This is one reason maintainer review is non-negotiable. The bias is acknowledged, not solved.
+
+This disclosure complements the more general note on AI collaboration in the project README. ETHICS.md is the place where the disclosure carries weight, because data-level AI involvement is a methodological matter with ethical implications, not a stylistic choice about documentation drafting.
 
 ## Correction and takedown process
 
@@ -58,4 +70,4 @@ The statement is offered in the spirit of methodological transparency and good-f
 
 ---
 
-*Last updated: April 2026*
+*Last updated: May 2026*

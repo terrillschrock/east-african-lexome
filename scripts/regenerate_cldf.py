@@ -1,163 +1,103 @@
 """
-EALex CLDF Regeneration Script
-================================
-Reads the master spreadsheet (African_Lexome_CLDF_Template.xlsx) and writes
-fresh CLDF-format files to the cldf/ folder of your repository.
+EALex CLDF Regeneration Script (v2, October 2026)
+==================================================
+Reads the master spreadsheet and writes CLDF-format files to the cldf/ folder.
 
 USAGE
 -----
-1. Edit the two paths in CONFIGURATION below to match where your files live.
-2. Run from the command line:
-     Windows:  py regenerate_cldf.py
-     Mac/Linux: python3 regenerate_cldf.py
-3. After successful run, open GitHub Desktop, review the diff, commit, and push.
+    python3 regenerate_cldf.py MASTER.xlsx PATH/TO/REPO/cldf
 
-REQUIREMENTS
+(or edit the two defaults below and run with no arguments).
+
+Export rules
 ------------
-  pip install openpyxl
-  (or on Windows: py -m pip install openpyxl)
+* Every column with a header in a master sheet is exported, in sheet order,
+  except those listed in EXCLUDE (internal bookkeeping).
+* Master names that differ from CLDF names are mapped in RENAME
+  (MeaningTable -> parameters.csv; FormTable.Meaning_ID -> Parameter_ID).
+* FormTable rows with a blank ID get the next free number (form-00000NNN).
+  IDs already present are never changed. Because the master is not modified,
+  paste the printed new IDs back into the master once you publish, so that
+  they stay fixed.
+* Cached formula values are exported (open and save the master in Excel or
+  LibreOffice first, so the values are current).
 """
-
-import os, json, csv, sys
-
-# ── CONFIGURATION ──────────────────────────────────────────────────────────────
-# Edit these two paths to match your setup:
-
-SPREADSHEET = os.path.expanduser(
-    "~/Documents/Linguistics/East African Lexome/African_Lexome_CLDF_Template.xlsx"
-)
-REPO_CLDF_FOLDER = os.path.expanduser(
-    "~/Documents/GitHub/East-African-Lexome/cldf"
-)
-
-# ──────────────────────────────────────────────────────────────────────────────
+import csv, os, re, sys
 
 try:
     from openpyxl import load_workbook
 except ImportError:
-    print("ERROR: openpyxl is not installed.")
-    print("Install it with:  py -m pip install openpyxl")
-    sys.exit(1)
+    sys.exit("openpyxl missing: pip install openpyxl")
 
-if not os.path.exists(SPREADSHEET):
-    print(f"ERROR: Spreadsheet not found at:\n  {SPREADSHEET}")
-    print("Edit the SPREADSHEET path at the top of this script.")
-    sys.exit(1)
+SPREADSHEET = os.path.expanduser("~/Documents/Linguistics/East African Lexome/EALex_Master.xlsx")
+REPO_CLDF_FOLDER = os.path.expanduser("~/Documents/GitHub/east-african-lexome/cldf")
+if len(sys.argv) >= 3:
+    SPREADSHEET, REPO_CLDF_FOLDER = sys.argv[1], sys.argv[2]
 
-if not os.path.exists(REPO_CLDF_FOLDER):
-    print(f"ERROR: Repo cldf folder not found at:\n  {REPO_CLDF_FOLDER}")
-    print("Edit the REPO_CLDF_FOLDER path at the top of this script.")
-    sys.exit(1)
+# sheet -> (output file, columns to leave out, {master name: CLDF name})
+TABLES = [
+    ("LanguageTable",   "languages.csv",     {"Citation_Policy_Notes", "Sources_acquired", "Data_extracted", "Lexemes_collected"}, {}),
+    ("MeaningTable",    "parameters.csv",    {"Link_count"}, {}),
+    ("FormTable",       "forms.csv",         set(), {"Meaning_ID": "Parameter_ID"}),
+    ("CognateTable",    "cognates.csv",      set(), {}),
+    ("CognatesetTable", "cognatesets.csv",   set(), {}),
+    ("OrthoRegistry",   "orthographies.csv", set(), {}),
+]
+ID_RE = re.compile(r"^form-(\d+)$")
 
-OUT = REPO_CLDF_FOLDER
-print(f"Reading from: {SPREADSHEET}")
-print(f"Writing to:   {OUT}\n")
+if not os.path.exists(SPREADSHEET): sys.exit(f"Spreadsheet not found: {SPREADSHEET}")
+if not os.path.isdir(REPO_CLDF_FOLDER): sys.exit(f"cldf folder not found: {REPO_CLDF_FOLDER}")
+print(f"Reading: {SPREADSHEET}\nWriting: {REPO_CLDF_FOLDER}\n")
+wb = load_workbook(SPREADSHEET, data_only=True, read_only=True)
 
-wb = load_workbook(SPREADSHEET)
+def read_sheet(name):
+    rows = wb[name].iter_rows(values_only=True)
+    header = next(rows)
+    keep = [i for i, h in enumerate(header) if h not in (None, "")]
+    names = [str(header[i]).strip() for i in keep]
+    out = []
+    for r in rows:
+        d = {n: ("" if i >= len(r) or r[i] is None else str(r[i]).strip()) for n, i in zip(names, keep)}
+        if any(d.values()): out.append(d)
+    return names, out
 
-def sheet_to_rows(sheet_name):
-    ws = wb[sheet_name]
-    headers = [cell.value for cell in ws[1]]
-    rows = []
-    for row in ws.iter_rows(min_row=2, values_only=True):
-        if any(cell is not None and str(cell).strip() != '' for cell in row):
-            rows.append(dict(zip(headers, [('' if c is None else str(c)) for c in row])))
-    return headers, rows
+def clean(v):  # whole numbers read back as '12.0' from float cells
+    return v[:-2] if re.fullmatch(r"-?\d+\.0", v) else v
 
-# ── languages.csv ─────────────────────────────────────────────────────────────
-_, langs = sheet_to_rows("LanguageTable")
-out_cols = ["ID","Name","Glottocode","ISO639P3code","Latitude","Longitude",
-            "Macroarea","Family","Subfamily","Country","EA_Countries",
-            "Speaker_Population","Endangerment","Source_Name","Comment"]
-with open(f"{OUT}/languages.csv", "w", newline='', encoding='utf-8') as f:
-    w = csv.DictWriter(f, fieldnames=out_cols)
-    w.writeheader()
-    for r in langs:
-        out_row = {c: r.get(c, '') for c in out_cols}
-        if not out_row.get('Macroarea'):
-            out_row['Macroarea'] = 'Africa'
-        w.writerow(out_row)
-print(f"  languages.csv:    {len(langs):>5} rows")
-
-# ── parameters.csv ────────────────────────────────────────────────────────────
-_, params = sheet_to_rows("ParameterTable")
-param_cols = ["ID","Name","CAWL_ID","Source","Tier","Concepticon_ID",
-              "Concepticon_Gloss","Semantic_Field","Part_Of_Speech",
-              "Swadesh_100","Swadesh_207","LJ_100","Comment"]
-with open(f"{OUT}/parameters.csv", "w", newline='', encoding='utf-8') as f:
-    w = csv.DictWriter(f, fieldnames=param_cols)
-    w.writeheader()
-    for r in params:
-        w.writerow({c: r.get(c, '') for c in param_cols})
-print(f"  parameters.csv:   {len(params):>5} rows")
-
-# ── forms.csv ─────────────────────────────────────────────────────────────────
-_, forms = sheet_to_rows("FormTable")
-form_cols = ["ID","Language_ID","Parameter_ID","Form","Segments","Source_Form",
-             "IPA","Orthography","Loan","LoanSource_Language","Cognate_ID",
-             "Cognate_Set_ID","Value","Comment","Source","Data_Source_Type",
-             "Source_Page","Elicitation_Context","Collector","Collection_Date",
-             "Confidence"]
-real_forms = [r for r in forms if r.get('ID') and r['ID'] not in ('form-001','example')]
-with open(f"{OUT}/forms.csv", "w", newline='', encoding='utf-8') as f:
-    w = csv.DictWriter(f, fieldnames=form_cols)
-    w.writeheader()
-    for r in real_forms:
-        w.writerow({c: r.get(c, '') for c in form_cols})
-print(f"  forms.csv:        {len(real_forms):>5} rows")
-
-# ── cognates / cognatesets / orthographies ───────────────────────────────────
-for sheet, fname, cols in [
-    ("CognateTable", "cognates.csv",
-     ["ID","Form_ID","Cognateset_ID","Alignment","Alignment_Method","Doubt","Comment","Source"]),
-    ("CognatesetTable", "cognatesets.csv",
-     ["ID","Description","Proto_Form","Proto_Language","Comment"]),
-    ("OrthoRegistry", "orthographies.csv",
-     ["Ortho_ID","Name","Language_Family","Region","Era","Colonial_Power",
-      "Script","Tonal_Marking","Key_Features","IPA_Notes","Reference","Comment"]),
-]:
-    _, rows = sheet_to_rows(sheet)
-    with open(f"{OUT}/{fname}", "w", newline='', encoding='utf-8') as f:
-        w = csv.DictWriter(f, fieldnames=cols)
-        w.writeheader()
+for sheet, fname, exclude, rename in TABLES:
+    names, rows = read_sheet(sheet)
+    cols = [c for c in names if c not in exclude]
+    if sheet == "FormTable":
+        used = [int(m.group(1)) for r in rows if (m := ID_RE.match(r["ID"]))]
+        nxt, new_ids = (max(used) if used else 0) + 1, []
         for r in rows:
-            w.writerow({c: r.get(c, '') for c in cols})
-    print(f"  {fname:<17} {len(rows):>5} rows")
+            if not r["ID"]:
+                r["ID"] = f"form-{nxt:08d}"; new_ids.append(r["ID"]); nxt += 1
+        if new_ids: print(f"  [{len(new_ids)} FormTable rows had no ID: assigned {new_ids[0]} .. {new_ids[-1]}]")
+        ids = [r["ID"] for r in rows]
+        assert len(ids) == len(set(ids)), "duplicate FormTable IDs"
+    if sheet == "LanguageTable" and "Macroarea" not in cols:
+        cols.insert(cols.index("Family"), "Macroarea")
+        for r in rows: r["Macroarea"] = "Africa"
+    with open(os.path.join(REPO_CLDF_FOLDER, fname), "w", newline="", encoding="utf-8") as f:
+        w = csv.writer(f)
+        w.writerow([rename.get(c, c) for c in cols])
+        for r in rows: w.writerow([clean(r.get(c, "")) for c in cols])
+    print(f"  {fname:<18}{len(rows):>6} rows")
 
 # ── sources.bib ───────────────────────────────────────────────────────────────
-_, sources = sheet_to_rows("SourceTable")
-def bib_escape(s):
-    if not s: return ""
-    return s.replace("{","\\{").replace("}","\\}").replace("&","\\&")
-
-bib_lines = []
+_, sources = read_sheet("SourceTable")
+esc = lambda s: s.replace("{", "\\{").replace("}", "\\}").replace("&", "\\&")
+bib = []
 for r in sources:
-    sid = r.get('ID','').strip()
-    if not sid: continue
-    btype = r.get('Type','misc').strip() or 'misc'
-    bib_lines.append(f"@{btype}{{{sid},")
-    fields = []
-    for csv_field, bib_field in [
-        ('Author','author'), ('Year','year'), ('Title','title'),
-        ('Publisher','publisher'), ('Place','address'),
-        ('Journal','journal'), ('Volume','volume'), ('Pages','pages'),
-        ('URL','url')
-    ]:
-        v = r.get(csv_field,'').strip()
-        if v:
-            fields.append(f"  {bib_field} = {{{bib_escape(v)}}}")
-    note_parts = []
-    for f in ['Language_Covered','Region_Covered','Source_Type','Comment']:
-        v = r.get(f,'').strip()
-        if v:
-            note_parts.append(f"{f}: {v}")
-    if note_parts:
-        fields.append(f"  note = {{{bib_escape(' | '.join(note_parts))}}}")
-    bib_lines.append(",\n".join(fields))
-    bib_lines.append("}\n")
-
-with open(f"{OUT}/sources.bib", "w", encoding='utf-8') as f:
-    f.write("\n".join(bib_lines))
-print(f"  sources.bib:      {len(sources):>5} entries")
-
-print("\nDone! Now open GitHub Desktop, review the diff, commit, and push.")
+    if not r.get("ID"): continue
+    if r.get("Author"): r["Author"] = re.sub(r"\s*;\s*", " and ", r["Author"])  # BibTeX name separator
+    fields = [f"  {b} = {{{esc(r[a])}}}" for a, b in [
+        ("Author","author"),("Year","year"),("Title","title"),("Publisher","publisher"),
+        ("Place","address"),("Journal","journal"),("Volume","volume"),("Pages","pages"),("URL","url")] if r.get(a)]
+    note = [f"{k}: {r[k]}" for k in ("Language_Covered","Region_Covered","Source_Type","License","Comment") if r.get(k)]
+    if note: fields.append(f"  note = {{{esc(' | '.join(note))}}}")
+    bib.append(f"@{r.get('Type') or 'misc'}{{{r['ID']},\n" + ",\n".join(fields) + "\n}\n")
+with open(os.path.join(REPO_CLDF_FOLDER, "sources.bib"), "w", encoding="utf-8") as f:
+    f.write("\n".join(bib))
+print(f"  sources.bib       {len(bib):>6} entries\n\nDone. Review the diff, then commit and push.")
