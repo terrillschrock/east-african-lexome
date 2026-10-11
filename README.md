@@ -6,16 +6,11 @@ EALex aims to bring "lexomics" to a region whose linguistic richness has long be
 
 ## Scope
 
-EALex covers **422 languages** spoken across **ten East African nations**: Burundi, Eritrea, Ethiopia, Kenya, Rwanda, Somalia, South Sudan, Sudan, Tanzania, and Uganda. The languoid inventory is built on Glottolog 5.2 with project-specific reconciliation decisions (documented per-language in the dataset) where Ethnologue, regional expertise, or geographic considerations warranted divergence. A small number of languages without current Glottolog entries are included on independent ethnolinguistic grounds, with the absence of standard identifiers documented in the data.
+EALex covers **446 languages** spoken across **ten East African nations**: Burundi, Eritrea, Ethiopia, Kenya, Rwanda, Somalia, South Sudan, Sudan, Tanzania, and Uganda. The languoid inventory is built on Glottolog 5.3 with project-specific reconciliation decisions (documented per-language in the dataset) where Ethnologue, regional expertise, or geographic considerations warranted divergence. A small number of languages without current Glottolog entries are included on independent ethnolinguistic grounds, with the absence of standard identifiers documented in the data.
 
-The languages span four major language families plus several isolates:
+The languages span many families. The largest are Atlantic-Congo (170 languages, largely Bantu), Afro-Asiatic (64), and Nilotic (59), followed by Central Sudanic, Ta-Ne-Omotic, Nubian, Surmic, Heibanic and others, plus 19 isolates and unclassified languages.
 
-- **Atlantic-Congo** (largely Bantu) — 183 languages
-- **Nilo-Saharan** (Nilotic, Central Sudanic, Surmic, Koman, Kordofanian, and others) — combined majority
-- **Afro-Asiatic** (Cushitic, Omotic, Ethiosemitic, Berber-Beja) — 67 languages
-- **Isolates** — 10 languages, including Hadza, Sandawe, Kunama, Nara, Berta, Ongota, and Shabo
-
-Over half of the languages in scope are classified as threatened, shifting, moribund, or nearly extinct under Glottolog's Agglomerated Endangerment Status (AES) ratings — making documentation efforts time-sensitive.
+About 42 percent of the languages in scope (187 of 446) are classified as threatened, shifting, moribund, or nearly extinct under Glottolog's Agglomerated Endangerment Status (AES) ratings, and a further 27 are extinct, making documentation efforts time-sensitive.
 
 ## What's in the lexome
 
@@ -23,7 +18,7 @@ EALex's data model has three core entities:
 
 - **Forms** — lexical roots, stems, and admitted compounds drawn from each language's lexicon. The data model is *root-centric*: broad IPA transcription and cognate identification target the root, since that's where etymological comparison happens. Morphological analysis describes how the citation form decomposes into the root plus any inflectional or derivational material. Spontaneously inflected forms, transparent derivations, and multi-word expressions are excluded by design.
 - **Meanings** — semantic nodes that one or more languages have lexicalized. The registry contains both densely-attested comparative concepts (drawn from SIL CAWL, Leipzig-Jakarta, Swadesh, and community contributions) and sparsely-attested language-specific senses surfaced during import. A meaning's position on the core-to-satellite continuum is observed from attestation density, not assigned a priori.
-- **Languages** — the 422 East African speech varieties in scope, with geographic, genealogical, sociolinguistic, and per-language citation-policy metadata.
+- **Languages** — the 446 East African speech varieties in scope, with geographic, genealogical, sociolinguistic, and per-language citation-policy metadata.
 
 A separate `MeaningRelations` table records explicit semantic relationships between meanings — synonymy, colexification, taxonomic siblings, attested semantic shifts — providing a home for emic observations about how specific languages organize semantic space.
 
@@ -31,7 +26,7 @@ For the full data model, see [SCHEMA.md](SCHEMA.md).
 
 ## Goal
 
-The project's working target is **one million attested lexical roots and stems** — an average of roughly 2,400 entries per language, though some languages will contribute many more (an established dictionary like the project lead's own Ik dictionary contributes around 4,000 noun and verb roots alone) and others far fewer.
+The project's working target is **one million attested lexical roots and stems** — an average of roughly 2,400 entries per language, though some languages will contribute many more (the project lead's own Ik dictionary, the first language imported, contributes more than 5,000 forms) and others far fewer.
 
 ## Data format
 
@@ -41,28 +36,27 @@ The `cldf/` folder contains:
 
 | File | Contents |
 |---|---|
-| `languages.csv` | The 422 languages with Glottocodes, ISO codes, coordinates, family/subfamily classifications, country assignments, AES endangerment ratings, and per-language citation policy notes |
-| `meanings.csv` | The full meaning registry — comparative anchors and language-specific senses, tagged with provenance, RWC semantic domains, and Concepticon IDs where applicable |
-| `forms.csv` | Attested lexical forms with their roots, morphological analysis, IPA transcriptions, and source provenance |
-| `meaning_relations.csv` | Explicit semantic relationships between meanings |
-| `cognates.csv` / `cognatesets.csv` | Cognate codings (populated incrementally as comparative work proceeds) |
-| `orthographies.csv` | A registry of orthographic systems and transliteration conventions used in source materials and EALex's normalizations |
-| `sources.bib` | A bibliographic register of 468+ sources organized in three tiers: pan-regional reference works, family-level comparative works, and language-specific descriptive sources |
+| `languages.csv` | The 446 languages with Glottocodes, ISO codes, coordinates, family classifications, country assignments, and AES endangerment ratings |
+| `parameters.csv` | The meaning registry (called `MeaningTable` in the master spreadsheet; CLDF calls these parameters), with Concepticon IDs and semantic domains where applicable, and `Broader_ID` links from specific to more general meanings |
+| `forms.csv` | Attested lexical forms with their roots, morphological analysis, plurals, segmentations, and source provenance |
+| `cognates.csv` / `cognatesets.csv` | Cognate codings (empty so far; populated as comparative work proceeds) |
+| `orthographies.csv` | A registry of orthographic systems and transliteration conventions used in source materials |
+| `sources.bib` | A bibliographic register of 475 sources |
 | `Wordlist-metadata.json` | The CLDF schema describing the dataset structure |
-| `cldf/comparative/` | Nested CLDF-conformant Wordlist, filtered to comparative-anchored meanings, for lexibank-compatible tooling |
+
+A column-by-column guide to the newer fields is in [FIELDS.md](FIELDS.md). The `MeaningRelations` table and the nested comparative wordlist described in SCHEMA.md are not yet exported.
 
 Semantic domain tagging uses the SIL Rapid Word Collection (RWC) hierarchy under CC BY-SA 4.0. RWC domain IDs serve as etic organizational scaffolding rather than claims about indigenous semantic structure.
 
 ## Project status
 
-EALex is in the **infrastructure-building phase**, with the schema redesign and seed data complete and inaugural data imports beginning.
+EALex is in the **early data phase**. The schema redesign and the first import, the Ik language (5,391 forms from Schrock 2017), are complete. See [RELEASE_NOTES.md](RELEASE_NOTES.md) for what the current version contains and what is not yet included.
 
 Active work:
 
-1. Inaugural data import from the project lead's Ik dictionary (~4,000 noun and verb roots from FLEx, with SIL semantic domain tags)
+1. Imports of the other two Kuliak languages, Nyang'i and Soo, with permission from the data's compilers
 2. Concepticon mapping pass for the comparative-anchor layer
-3. AI-assisted domain suggestion tool for subsequent imports lacking pre-tagged data
-4. Systematic source acquisition and lexical data harvesting, language by language
+3. Systematic source acquisition and lexical data harvesting, language by language
 
 ## Contributing
 
@@ -89,7 +83,9 @@ For data corrections, new language proposals, source additions, and general ques
 
 ## Citation
 
-> Schrock, Terrill (2026). *East African Lexome (EALex): A Lexical Database for East African Languages.* https://github.com/terrillschrock/east-african-lexome
+> Schrock, Terrill (2026). *East African Lexome (EALex): A Comparative Lexical Database for East African Languages.* Version 0.2.0. https://github.com/terrillschrock/east-african-lexome
+
+Once a version has a DOI, cite that version's DOI (listed in its release notes).
 
 ## License
 

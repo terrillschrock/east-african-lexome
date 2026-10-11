@@ -10,7 +10,7 @@ repository-code: "https://github.com/terrillschrock/east-african-lexome"
 url: "https://github.com/terrillschrock/east-african-lexome"
 abstract: >-
   EALex is a comprehensive, machine-readable comparative lexical database
-  for 420 languages spoken across ten East African nations (Burundi,
+  for 446 languages spoken across ten East African nations (Burundi,
   Eritrea, Ethiopia, Kenya, Rwanda, Somalia, South Sudan, Sudan, Tanzania,
   Uganda). The dataset is published in CLDF (Cross-Linguistic Data Format)
   and serves as research infrastructure for African historical linguistics
@@ -26,11 +26,12 @@ keywords:
   - Bantu
   - Cushitic
   - Kordofanian
+  - Ik
   - Kuliak
   - Nilotic
   - Omotic
   - Semitic
   - Surmic
 license: CC-BY-4.0
-version: "0.1.0"
-date-released: 2026-04-25
+version: "0.2.0"
+date-released: 2026-10-11
